@@ -5,5 +5,4 @@
 import preprocessing
 
 
-preprocessing.preprocess("中研院_必需")
-preprocessing.preprocess("中研院_必須")
+preprocessing.preprocess(input("Input file name: "))
