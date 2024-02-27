@@ -1,0 +1,8 @@
+#ignore account.info
+account.info
+
+#ignore pycache
+CampBot/__pycache__/
+CampBot/intentAGE/__pycache__/
+CampBot/intentTWOFOUR/__pycache__/
+CampBot/intentFIVENINE/__pycache__/
