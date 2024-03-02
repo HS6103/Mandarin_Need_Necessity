@@ -14,21 +14,27 @@ articut = Articut(username=accountDICT["username"], apikey=accountDICT["api_key"
 
 def listVerb(targetSTR):
     with open ("../purged_corpus/中研院_{}_purged.txt".format(targetSTR), mode="r", encoding="utf-8") as p:
-        print("Generating verbStemLIST...\n" + "="*60)        
+        print("Generating verbStemLIST...")        
         inputSTR = p.read()
         resultDICT = articut.parse(inputSTR)
         verbStemLIST = articut.getVerbStemLIST(resultDICT)
-        print("\nFinished loading verbStemLIST...\n" + "="*60)
+        print("Finished creating verbStemLIST...\n")
     
     with open('../purged_corpus/中研院_{}_intent.txt'.format(targetSTR),'a',encoding="utf-8") as g: # 將選取檔案中utterance的所有verbStem寫入{}_intent.txt
         try:
+            writtenLIST = []
             for entry in verbStemLIST:  #撥開第一層list
                 if entry != []:  
                     for verb in entry:           #撥開第二層list
-                        g.write(verb[2] + "\n")        #將不是empty list的verbStem寫入{}_intent.txt
+                        if len(verb[2]) >= 2 and verb[2] not in writtenLIST:
+                            g.write(verb[2] + "\n")        #將不是empty list的verbStem寫入{}_intent.txt
+                            writtenLIST.append(verb[2])
+                            break
+                        else:
+                            pass
                 else:
                     pass
-            print("\nFinished\n")
+            print("Finished\n" + "="*60)
             
         except Exception as e:
             print("\nFailed!\n" + "The following error occurred: {}".format(e))
@@ -73,9 +79,10 @@ if __name__ == "__main__":
         
     print("\nRunning...")
                     
-    #listVerb("須")
-    #listVerb("需")
+    listVerb("須")
     create_intent("須")
+    
+    listVerb("需")
     create_intent("需")
     
     
