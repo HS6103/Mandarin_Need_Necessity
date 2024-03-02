@@ -22,12 +22,12 @@ def listVerb(targetSTR):
     
     with open('../purged_corpus/中研院_{}_intent.txt'.format(targetSTR),'a',encoding="utf-8") as g: # 將選取檔案中utterance的所有verbStem寫入{}_intent.txt
         try:
-            writtenLIST = []
+            writtenLIST = []        #裝寫過的verbStem
             for entry in verbStemLIST:  #撥開第一層list
                 if entry != []:  
                     for verb in entry:           #撥開第二層list
-                        if len(verb[2]) >= 2 and verb[2] not in writtenLIST:
-                            g.write(verb[2] + "\n")        #將不是empty list的verbStem寫入{}_intent.txt
+                        if (len(verb[2]) >= 2) and (verb[2] not in writtenLIST):     #將不是[]且沒寫過的verbStem寫入{}_intent.txt和writtenLIST
+                            g.write(verb[2] + "\n")        
                             writtenLIST.append(verb[2])
                             break
                         else:
