@@ -73,6 +73,9 @@ def create_intent(targetSTR):
         except Exception as e:
             print("\nFailed!\n" + "The following error occurred: {}".format(e))
             
+#def insert_utterance(targetSTR):
+        
+            
             
 #entry_point
 if __name__ == "__main__":
