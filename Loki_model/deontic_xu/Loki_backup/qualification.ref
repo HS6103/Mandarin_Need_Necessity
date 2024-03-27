@@ -1,0 +1,28 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v269",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "只須身強體壯就好": {
+            "id": "058631cb-8a85-4d05-b940-cd9015e9ba01",
+            "pos": "<MODIFIER>只</MODIFIER><MODAL>須</MODAL><ENTITY_oov>身</ENTITY_oov><ENTITY_nouny>強體</ENTITY_nouny><MODIFIER>壯</MODIFIER><FUNC_inner>就</FUNC_inner><MODIFIER>好</MODIFIER>",
+            "lexy": [],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?(<MODAL>[^<]+</MODAL>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>身</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>強體</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?"
+        },
+        "須具備舞蹈、身段的舞台經驗": {
+            "id": "a99ed87e-56ba-48d6-bcb0-f8a38583d216",
+            "pos": "<MODAL>須</MODAL><ACTION_verb>具備</ACTION_verb><ENTITY_nouny>舞蹈</ENTITY_nouny><ENTITY_oov>身段</ENTITY_oov><FUNC_inner>的</FUNC_inner><ENTITY_noun>舞台</ENTITY_noun><ENTITY_noun>經驗</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(具備|具有|兼備|兼具|保留|兼有|存有|帶有|懷有|持有|擁有)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<MODAL>[^<]+</MODAL>)?<(ACTION_verb|VerbP)>具備</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>舞蹈</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>身段</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>舞台</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>經驗</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}

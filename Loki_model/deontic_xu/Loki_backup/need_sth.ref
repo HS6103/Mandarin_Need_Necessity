@@ -1,0 +1,20 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v269",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "例如不須冷媒的手提式冰箱、手提式蓄電池": {
+            "id": "e05d7759-c4da-45ad-8319-c06b62bda013",
+            "pos": "<FUNC_inter>例如</FUNC_inter><FUNC_negation>不</FUNC_negation><MODAL>須</MODAL><ENTITY_nouny>冷媒</ENTITY_nouny><FUNC_inner>的</FUNC_inner><MODIFIER>手提式</MODIFIER><ENTITY_nounHead>冰箱</ENTITY_nounHead><MODIFIER>手提式</MODIFIER><ENTITY_nouny>蓄電池</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?<FUNC_negation>[^<]+</FUNC_negation>(<MODAL>[^<]+</MODAL>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>冷媒</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>冰箱</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>蓄電池</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}

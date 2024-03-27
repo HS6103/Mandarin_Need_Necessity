@@ -1,0 +1,75 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v269",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "保護眼睛須及時": {
+            "id": "fae877a4-6d33-4f2a-9245-d5d53093be19",
+            "pos": "<ACTION_verb>保護</ACTION_verb><ENTITY_nouny>眼睛</ENTITY_nouny><MODAL>須</MODAL><ENTITY_oov>及時</ENTITY_oov>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(保護|保住|保全|保存|保持|保藏|保衛|保障|守護|維護|護著)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>保護</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>眼睛</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<MODAL>[^<]+</MODAL>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>及時</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "須注意乘船安全": {
+            "id": "9f290818-c69d-4ace-9e71-1287400e79db",
+            "pos": "<MODAL>須</MODAL><ACTION_verb>注意</ACTION_verb><ACTION_verb>乘船</ACTION_verb><MODIFIER>安全</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(注意|在意|關注|伴隨|侍奉|傾聽|參加|定期去|照看|照顧|監聽)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(乘船|上船|擺渡|登岸|渡海|啟程|坐船|動身|逃難|偷渡|探親)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<MODAL>[^<]+</MODAL>)?<(ACTION_verb|VerbP)>注意</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>乘船</(ACTION_verb|VerbP)>(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?"
+        },
+        "須防持鐵器之人": {
+            "id": "5a985169-2d2d-4568-94f0-20361214b4ec",
+            "pos": "<MODAL>須</MODAL><ACTION_verb>防持</ACTION_verb><ENTITY_nouny>鐵器</ENTITY_nouny><FUNC_inner>之</FUNC_inner><ENTITY_noun>人</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(防持|)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<MODAL>[^<]+</MODAL>)?<(ACTION_verb|VerbP)>防持</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>鐵器</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>人</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "短期內操作仍須保守": {
+            "id": "fc7ecfc6-a4ad-4f4d-8dba-3e87ee86623f",
+            "pos": "<MODIFIER>短期</MODIFIER><RANGE_locality>內</RANGE_locality><ACTION_verb>操作</ACTION_verb><FUNC_inner>仍</FUNC_inner><MODAL>須</MODAL><MODIFIER>保守</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(操作|合作|操勞|操弄|操控|操縱|運作|做活|幹活|想出|打拼)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?<RANGE_(locality|period)>[^<]+</RANGE_(locality|period)><(ACTION_verb|VerbP)>操作</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?(<MODAL>[^<]+</MODAL>)?(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?"
+        },
+        "投資人此時介入須特別小心": {
+            "id": "e4e9880e-ea76-4aa3-860f-929d25372f67",
+            "pos": "<ENTITY_nouny>投資人</ENTITY_nouny><TIME_justtime>此時</TIME_justtime><ACTION_verb>介入</ACTION_verb><MODAL>須</MODAL><MODIFIER>特別</MODIFIER><MODIFIER>小心</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(介入|干擾|干涉|排解|疏解|解勸|調停|調解|關說|干預|涉入)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>投資人</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]+</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>介入</(ACTION_verb|VerbP)>(<MODAL>[^<]+</MODAL>)?(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?"
+        },
+        "大哥臨走時叮囑他須聽從孟嫂的話": {
+            "id": "f6606bf1-7b01-4dcb-9cdf-60c0b78c3d47",
+            "pos": "<ENTITY_pronoun>大哥</ENTITY_pronoun><ACTION_verb>臨走</ACTION_verb><FUNC_inner>時</FUNC_inner><ACTION_verb>叮囑</ACTION_verb><ENTITY_pronoun>他</ENTITY_pronoun><MODAL>須</MODAL><ACTION_verb>聽從</ACTION_verb><ENTITY_person>孟嫂</ENTITY_person><FUNC_inner>的</FUNC_inner><ENTITY_nouny>話</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(臨走|臨死|臨終)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(叮囑|叮嚀|囑咐|下令|促求|促請|催促|力促|勸動|勸告|命令)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(聽從|依從|服從|遵從|順從|依循|照做|照辦|看待|視作|認作)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<ENTITY_pronoun>[^<]+</ENTITY_pronoun>)?<(ACTION_verb|VerbP)>臨走</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>叮囑</(ACTION_verb|VerbP)>(<ENTITY_pronoun>[^<]+</ENTITY_pronoun>)?(<MODAL>[^<]+</MODAL>)?<(ACTION_verb|VerbP)>聽從</(ACTION_verb|VerbP)>(<ENTITY_person>[^<]+</ENTITY_person>)?(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>話</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "北管傳習中心的功能須訂為推展北管戲曲": {
+            "id": "1fbbf6e9-6cbf-433c-a483-0c8b6c4057bf",
+            "pos": "<ENTITY_oov>北管</ENTITY_oov><ACTION_verb>傳習</ACTION_verb><ENTITY_nounHead>中心</ENTITY_nounHead><FUNC_inner>的</FUNC_inner><ENTITY_noun>功能</ENTITY_noun><MODAL>須</MODAL><ACTION_verb>訂為</ACTION_verb><ACTION_verb>推展</ACTION_verb><ENTITY_nouny>北管</ENTITY_nouny><ENTITY_nouny>戲曲</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(傳習|修習|學習|攻讀|求學|留學|研判|研讀|考查|遊學|佈教)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(訂為|定為|定於|改成|列為|改成了|改回|改為|取為|延到|降為)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(推展|拓展|推廣|發展|傳播|宣傳|廣傳|延伸|打造|散佈|散播)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>北管</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>傳習</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>中心</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>功能</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<MODAL>[^<]+</MODAL>)?<(ACTION_verb|VerbP)>訂為</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>推展</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>北管</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>戲曲</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}

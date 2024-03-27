@@ -1,0 +1,41 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v269",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "須立即求醫": {
+            "id": "f06eecaf-9d34-46f5-a0b5-e6415da7124a",
+            "pos": "<MODAL>須</MODAL><TIME_justtime>立即</TIME_justtime><ACTION_verb>求醫</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(求醫|求診|就診|看診|看病|探望|看醫生|就醫|探視|診治|出診)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<MODAL>[^<]+</MODAL>)?(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]+</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>求醫</(ACTION_verb|VerbP)>"
+        },
+        "須立即停工進行改善": {
+            "id": "d9e26236-0f5e-4278-b68f-8e789a7fad26",
+            "pos": "<MODAL>須</MODAL><TIME_justtime>立即</TIME_justtime><ACTION_verb>停工</ACTION_verb><ACTION_verb>進行</ACTION_verb><ACTION_verb>改善</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(停工|停業|停產|停辦|封殺|關掉|關閉|喊停|復工|停運|停駛)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(進行|沿用|開展|進行著|通過|展開|進行了|辦理|作出|實施|進行過)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(改善|修改|批改|改正|改良|改造|改進|改過|改錯|改革|整改)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<MODAL>[^<]+</MODAL>)?(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]+</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>停工</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>進行</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>改善</(ACTION_verb|VerbP)>"
+        },
+        "但對於急性之感染須立即處置": {
+            "id": "b8517c79-4456-467e-b4d1-c3f49a3694ba",
+            "pos": "<FUNC_inter>但</FUNC_inter><FUNC_inner>對於</FUNC_inner><MODIFIER>急性</MODIFIER><FUNC_inner>之</FUNC_inner><ACTION_verb>感染</ACTION_verb><MODAL>須</MODAL><TIME_justtime>立即</TIME_justtime><ACTION_verb>處置</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(感染|傳染|感化|沾染|影響|毒害|確診|致病|咬傷|發病|染病)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(處置|懲處|處分|處治|處理|處罰|制裁|懲治|懲罰|懲辦|改過)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?(<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>)?(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>感染</(ACTION_verb|VerbP)>(<MODAL>[^<]+</MODAL>)?(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]+</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>處置</(ACTION_verb|VerbP)>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}
