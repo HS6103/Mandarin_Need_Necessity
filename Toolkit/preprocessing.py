@@ -3,12 +3,21 @@
 
 import re
 import json
+from ArticutAPI import Articut
 from collections import OrderedDict
+
+with open("account.info", encoding="utf-8") as f:
+    accountDICT = json.load(f)
+articut = Articut(username=accountDICT["username"], apikey=accountDICT["api_key"])
 
 # 讀取 re
 with open("corpus_op_re.json","r",encoding="utf-8") as e:
     corpus_op_re = json.load(e)
 regexLIST = list(corpus_op_re.items())
+
+with open("corpus_chunk_re.json","r",encoding="utf-8") as c:
+    corpus_chunk_re = json.load(c)
+chunk_regexLIST = dict(corpus_chunk_re.items())
 
 # 處理無意義標點符號及空格
 def rm_marks(inputLIST): 
@@ -46,6 +55,31 @@ def sinica_purger(i, targetSTR):
         print("\n"+'"{}"：Total {} lines.'.format(targetSTR, len(corpusLIST)))
         print("======================================================================================================")
         
+def chunker(targetSTR, mode):
+    chunked_list = []
+    userDefined = "./UserDefinedFile.json"
+    
+    with open('../purged_corpus/中研院_{}_chunked.txt'.format(targetSTR),'w',encoding="utf-8") as n: # 將 corpusLIST 中的句子寫入 _purged.txt 檔
+        pass
+    with open('../purged_corpus/中研院_{}_purged.txt'.format(targetSTR),'r',encoding="utf-8") as g:
+        s_list = g.readlines()
+        pat = chunk_regexLIST["{}".format(mode)]
+        for sentence in s_list:
+            resultDICT = articut.parse(sentence, level='lv2', userDefinedDictFILE=userDefined)
+            m = re.search(pat, resultDICT["result_pos"][0])
+            print(m)
+                
+            if m == None:
+                pass
+            else:
+                chunked_string = ""
+                chunked_string += re.sub("<.+?>", "", m.group(0))
+                chunked_list.append(chunked_string)
+                    
+    with open('../purged_corpus/中研院_{}_chunked.txt'.format(targetSTR),'w',encoding="utf-8") as n: # 將 chunked_list 中的句子寫入 _chunked.txt 檔
+        n.write("\n".join(chunked_list))
+    
+        
 # 為了方便了解執行狀態，main() 中在執行 sinica_purger() 時，會同步顯示標的詞彙狀態。 
 def main(i):
     targetSTR =  regexLIST[i][0]
@@ -55,6 +89,8 @@ def main(i):
     }
     try:
         sinica_purger(i, targetSTR)
+        chunker(targetSTR, "front")
+        chunker(targetSTR, "aft")
     except Exception as e: # 若遇到錯誤，會將錯誤訊息回傳。
         resultDICT["{}_status".format(regexLIST[i][0])] = False
         print(r"Error occurred when processing '{}': {}.".format(targetSTR, type(e).__name__))
