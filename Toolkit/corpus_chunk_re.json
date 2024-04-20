@@ -1,4 +1,4 @@
 {
     "front":"(<FUNC_(conjunction|degreeHead|determiner|inner|inter|modifierHead|negation)>[^<]</FUNC_(conjunction|degreeHead|determiner|inner|inter|modifierHead|negation)>.*?<UserDefined>[需須]</UserDefined>)",
-    "aft":"(<UserDefined>[需須]</UserDefined>.*?<FUNC_(conjunction|degreeHead|determiner|inner|inter|modifierHead|negation)>[^<]</FUNC_(conjunction|degreeHead|determiner|inner|inter|modifierHead|negation)>)"
+    "aft":"(<MODAL>必</MODAL>)?(<UserDefined>[需須]</UserDefined>.*?<FUNC_(conjunction|degreeHead|determiner|inner|inter|modifierHead|negation)>[^<]</FUNC_(conjunction|degreeHead|determiner|inner|inter|modifierHead|negation)>)"
 }
