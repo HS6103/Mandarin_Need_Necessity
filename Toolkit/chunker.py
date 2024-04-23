@@ -35,7 +35,7 @@ def chunker(targetSTR, mode):
                     if mode == "front":
                         chunked_string += re.sub("<.+?>", "", m.group(0))  #拔掉POS tag
                     else:
-                        chunked_string += re.sub("<.+?>", "", m.group(1))  #拔掉POS tag
+                        chunked_string += re.sub("<.+?>", "", m.group(0))  #拔掉POS tag
                     chunked_list.append(chunked_string)  #暫存於chunked_list
                     sleep(0.5)
                         
@@ -49,7 +49,7 @@ def chunker(targetSTR, mode):
 
 
 if __name__ == "__main__":
-    chunker("須", "front")
+    #chunker("須", "front")
     chunker("須", "aft")
-    chunker("需", "front")
+    #chunker("需", "front")
     chunker("需", "aft")
