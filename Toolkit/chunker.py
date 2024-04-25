@@ -38,18 +38,19 @@ def chunker(targetSTR, mode):
                         chunked_string += re.sub("<.+?>", "", m.group(0))  #拔掉POS tag
                     chunked_list.append(chunked_string)  #暫存於chunked_list
                     sleep(0.5)
-                        
+                    
+             
         with open('../purged_corpus/中研院_{}_chunked_{}.txt'.format(targetSTR, mode),'w',encoding="utf-8") as n: # 將 chunked_list 中的句子寫入 _chunked.txt 檔
             n.write("\n".join(chunked_list))
             print("Success!")
-            print("======================================================================================================\n")                        
+            print("======================================================================================================")                        
             
     except Exception as e:
         print("Encountered Error: {}".format(e))
 
 
 if __name__ == "__main__":
-    #chunker("須", "front")
+    chunker("須", "front")
     chunker("須", "aft")
-    #chunker("需", "front")
+    chunker("需", "front")
     chunker("需", "aft")
